@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '~> 3.2.2'
+gem 'haml', '~> 3.1.4'
+gem 'devise', '~> 2.0.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -21,6 +23,14 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group 'test' do
+  gem 'launchy'
+  gem 'capybara',  '~> 1.1.1'
+  gem 'factory_girl_rails'
+  gem 'colorific', '~> 1.0.0'
+  gem 'test_notifier', '~> 1.0.0'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
