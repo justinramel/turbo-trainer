@@ -13,7 +13,6 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
     assert_content "Home"
   end
 
-
   test "show sign in page when user is not authenticated" do
     visit home_index_path
 
