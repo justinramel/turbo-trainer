@@ -7,11 +7,15 @@
     = csrf_meta_tag
 
   %body
-    #nav
-      - if user_signed_in?
-        Signed in as
-        = current_user.email
-        = link_to "Sign out", destroy_user_session_path, :method => :delete
+    .navbar{:class => "navbar-fixed-top"}
+      .navbar-inner
+        .container
+          = link_to "Turbo Trainer", home_index_path, :class => "brand"
 
-    #content
+          - if user_signed_in?
+            %p{:class => "navbar-text pull-right"}
+              = current_user.email
+              = link_to "Sign out", destroy_user_session_path, :method => :delete
+
+    .container
       = yield

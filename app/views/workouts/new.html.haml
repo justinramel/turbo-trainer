@@ -5,11 +5,12 @@
   = label :workout, :duration, 'Duration (minutes)'
   = select :workout, :duration, ['Just ride','5', '10', '15', '20', '25', '30', '45', '60']
 
-  = label :workout, :interval, 'Interval'
-  = select :workout, :interval, ['None','4 minute slow 1 minute fast']
+  = label :workout, :interval, 'Intervals'
+  = select :workout, :interval, ['None','4 minutes slow 1 minute fast']
 
   = label :workout, :video, 'Video Url'
   = text_field :workout, 'video_url'
 
-  = submit_tag 'Start'
-  = link_to "Cancel", home_index_path
+  .form-actions
+    = submit_tag 'Start', :class => "btn btn-primary"
+    = link_to "Cancel", home_index_path, :class => "btn"
