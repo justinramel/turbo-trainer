@@ -1,22 +1,21 @@
-require 'test_helper'
+require "test_helper"
 
-class AuthenticationTest < ActionDispatch::IntegrationTest
-
-  setup do
+describe "Authentication integration" do
+  before do
     @user = Factory(:user)
   end
 
-  test "show home page when user is authenticated" do
-    sign_user_in(@user)
+  it "shows home page when user is authenticated" do
+    sign_in(@user)
     visit home_index_path
 
-    assert_content "Home"
+    page.body.must_include "Home"
   end
 
-  test "show sign in page when user is not authenticated" do
+  it "shows sign in page when user is not authenticated" do
     visit home_index_path
 
-    assert_content "Remember me"
+    page.body.must_include "Remember me"
   end
 
 end

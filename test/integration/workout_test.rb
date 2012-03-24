@@ -1,18 +1,17 @@
-require 'test_helper'
+require "test_helper"
 
-class WorkoutTest < ActionDispatch::IntegrationTest
+describe "Workout integration" do
 
-  setup do
+  before do
     @user = Factory(:user)
-    sign_user_in(@user)
+    sign_in(@user)
   end
 
-  test "create workout" do
+  it "create workout" do
     visit home_index_path
-
     click_link "New workout"
 
-    assert_content "Start workout"
+    page.body.must_include "Start workout"
   end
 
 end
