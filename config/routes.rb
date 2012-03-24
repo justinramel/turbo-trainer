@@ -4,7 +4,7 @@ TurboTrainer::Application.routes.draw do
 
   root :to => 'home#index'
 
-  resource :workout
+  resources :workouts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

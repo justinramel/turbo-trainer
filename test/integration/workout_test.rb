@@ -12,6 +12,10 @@ describe "Workout integration" do
     click_link "New workout"
 
     page.body.must_include "Start workout"
+
+    click_button "Start"
+
+    page.body.must_include "Workout started"
   end
 
 end

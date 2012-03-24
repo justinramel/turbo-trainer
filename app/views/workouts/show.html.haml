@@ -1,0 +1,13 @@
+%h1 Workout started
+
+= form_for @workout do |f|
+  %h3
+    Duration:
+    = @workout.duration
+  %h3
+    Media Url:
+    = @workout.media_url
+
+  .form-actions
+    = submit_tag 'Stop', :class => "btn btn-primary"
+    = link_to "Cancel", home_index_path, :class => "btn"

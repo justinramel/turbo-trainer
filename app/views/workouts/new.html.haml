@@ -1,15 +1,11 @@
 %h1 Start workout
 
-= form_tag workout_path do
+= form_for @workout do |f|
+  = f.label  :duration, 'Duration (minutes)'
+  = f.select :duration, ['Just ride','5', '10', '15', '20', '25', '30', '45', '60']
 
-  = label :workout, :duration, 'Duration (minutes)'
-  = select :workout, :duration, ['Just ride','5', '10', '15', '20', '25', '30', '45', '60']
-
-  = label :workout, :interval, 'Intervals'
-  = select :workout, :interval, ['None','4 minutes slow 1 minute fast']
-
-  = label :workout, :video, 'Video Url'
-  = text_field :workout, 'video_url'
+  = f.label      :media_url
+  = f.text_field :media_url
 
   .form-actions
     = submit_tag 'Start', :class => "btn btn-primary"
