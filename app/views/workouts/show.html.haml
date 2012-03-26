@@ -1,9 +1,12 @@
 %h1 Workout started
 
-= form_for @workout do |f|
+= form_for @workout do
   %h3
     Duration:
     = @workout.duration
+  %h3
+    Started:
+    = @workout.started
   %h3
     Media Url:
     = @workout.media_url

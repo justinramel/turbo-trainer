@@ -11,14 +11,22 @@ class WorkoutsController < ApplicationController
 
   def create
     @workout = Workout.new(params[:workout])
-    @workout.start
+    @workout.user = current_user
 
-    if @workout.save
+    if @workout.start!
+      current_user.workouts << @workout
       flash[:notice] = "Workout started"
       redirect_to workout_path(@workout)
     else
       render :new
     end
+  end
+
+  def update
+    @workout = Workout.find(params[:id])
+    @workout.stop!
+    flash[:notice] = "Workout stopped"
+    redirect_to root_path
   end
 
 end

@@ -1,3 +1,19 @@
 %h1 Home
 
-= link_to "New workout", new_workout_path, :class => "btn btn-primary btn-large"
+%p
+  = link_to "New workout", new_workout_path, :class => "btn btn-primary btn-large"
+
+%table{:class => "table table-bordered table-striped"}
+  %thead
+    %tr
+      %th Started
+      %th Finished
+      %th Duration
+      %th Actual Duration
+    %tbody
+    - @workouts.each do |workout|
+      %tr
+        %td= workout.started
+        %td= workout.finished
+        %td= workout.duration
+        %td= workout.actual_duration

@@ -2,7 +2,7 @@
 
 = form_for @workout do |f|
   = f.label  :duration, 'Duration (minutes)'
-  = f.select :duration, ['Just ride','5', '10', '15', '20', '25', '30', '45', '60']
+  = f.select :duration, ['5', '10', '15', '20', '25', '30', '45', '60']
 
   = f.label      :media_url
   = f.text_field :media_url

@@ -1,5 +1,5 @@
 class Workout < ActiveRecord::Base
-  def start
+  include WorkoutStopwatch
 
-  end
+  belongs_to :user
 end

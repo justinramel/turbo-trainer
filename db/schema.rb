@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120324174023) do
+ActiveRecord::Schema.define(:version => 20120326193740) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -34,8 +34,12 @@ ActiveRecord::Schema.define(:version => 20120324174023) do
   create_table "workouts", :force => true do |t|
     t.integer  "duration"
     t.string   "media_url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
+    t.float    "actual_duration"
+    t.datetime "started"
+    t.datetime "finished"
   end
 
 end

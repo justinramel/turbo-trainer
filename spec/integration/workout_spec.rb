@@ -1,4 +1,4 @@
-require "test_helper"
+require 'spec_helper'
 
 describe "Workout integration" do
 
@@ -11,11 +11,11 @@ describe "Workout integration" do
     visit home_index_path
     click_link "New workout"
 
-    page.body.must_include "Start workout"
+    page.body.should include("Start workout")
 
     click_button "Start"
 
-    page.body.must_include "Workout started"
+    page.body.should include("Workout started")
   end
 
 end
