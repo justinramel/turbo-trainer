@@ -1,26 +1,22 @@
 %h1 Workout started
 
-#countdown_dashboard
-  .dash.minutes_dash
-    %span.dash_title minutes
-    .digit 0
-    .digit 0
-  .dash.seconds_dash
-    %span.dash_title seconds
-    .digit 0
-    .digit 0
+.row
+  .span12
+    #countdown_dashboard
+      .dash.minutes_dash
+        %span.dash_title minutes
+        .digit 0
+        .digit 0
+      .dash.seconds_dash
+        %span.dash_title seconds
+        .digit 0
+        .digit 0
+%hr
+.row
+  .span12
+    %video{:src => @workout.media_url, :style => "width:100%", :autoplay => true, :controls => true}
 
 = form_for @workout do
-  %h3
-    Duration:
-    = @workout.duration
-  %h3
-    Started:
-    = @workout.started
-  %h3
-    Media Url:
-    = @workout.media_url
-
   .form-actions
     = submit_tag 'Stop', :class => "btn btn-primary"
     = link_to "Cancel", home_index_path, :class => "btn"
