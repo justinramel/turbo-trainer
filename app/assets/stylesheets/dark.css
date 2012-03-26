@@ -1,0 +1,36 @@
+.dash {
+    width: 138px;
+    height: 96px;
+    background: transparent url('/assets/dash.png') 0 0 no-repeat;
+    float: left;
+    margin-left: 2px;
+    padding-left: 13px;
+    position: relative;
+    color: #333;
+}
+
+.hours_dash {
+    clear: left;
+    background: transparent url('/assets/dark_hours_dash.png') 0 0 no-repeat;
+}
+
+.minutes_dash {
+    background: transparent url('/assets/dark_minutes_dash.png') 0 0 no-repeat;
+}
+
+.seconds_dash {
+    background: transparent url('/assets/dark_seconds_dash.png') 0 0 no-repeat;
+}
+
+.dash .digit {
+    font: bold 52pt Verdana;
+    font-weight: bold;
+    float: left;
+    width: 59px;
+    text-align: center;
+    position: relative;
+}
+
+.dash_title {
+    display: none;
+}

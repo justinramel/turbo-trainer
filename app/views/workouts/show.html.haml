@@ -1,5 +1,15 @@
 %h1 Workout started
 
+#countdown_dashboard
+  .dash.minutes_dash
+    %span.dash_title minutes
+    .digit 0
+    .digit 0
+  .dash.seconds_dash
+    %span.dash_title seconds
+    .digit 0
+    .digit 0
+
 = form_for @workout do
   %h3
     Duration:
@@ -14,3 +24,17 @@
   .form-actions
     = submit_tag 'Stop', :class => "btn btn-primary"
     = link_to "Cancel", home_index_path, :class => "btn"
+
+:javascript
+  jQuery(document).ready(function() {
+    $('#countdown_dashboard').countDown({
+        targetOffset: {
+          'day':   0,
+          'month': 0,
+          'year':  0,
+          'hour':  0,
+          'min':   #{@workout.duration},
+          'sec':   0
+        }
+    });
+  });
